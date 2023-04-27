@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PostutModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="customers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="address" Type="nchar" MaxLength="100" />
+    <Property Name="notes" Type="nchar" MaxLength="100" />
+    <Property Name="phone" Type="nchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nchar" MaxLength="50" />
+    <Property Name="email" Type="nchar" MaxLength="50" />
+    <Property Name="_name" Type="nchar" MaxLength="50" />
+    <Property Name="is_active" Type="bit" />
+    <Property Name="image" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="_name" Type="nchar" MaxLength="50" />
+    <Property Name="code" Type="int" />
+    <Property Name="price" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="notes" Type="nchar" MaxLength="100" />
+    <Property Name="image" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="suppliers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="address" Type="nchar" MaxLength="100" />
+    <Property Name="notes" Type="nchar" MaxLength="100" />
+    <Property Name="phone" Type="nchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nchar" MaxLength="50" />
+    <Property Name="email" Type="nchar" MaxLength="50" />
+    <Property Name="_name" Type="nchar" MaxLength="50" />
+    <Property Name="is_active" Type="bit" />
+    <Property Name="image" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="USers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nchar" MaxLength="50" />
+    <Property Name="password" Type="nchar" MaxLength="50" />
+    <Property Name="image" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="PostutModelStoreContainer">
+    <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="suppliers" EntityType="Self.suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USers" EntityType="Self.USers" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

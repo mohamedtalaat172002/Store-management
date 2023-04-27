@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PostutModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="notes" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="C_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="is_active" Type="Boolean" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="code" Type="Int32" />
+    <Property Name="price" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="notes" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="supplier">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="notes" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="C_name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="is_active" Type="Boolean" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="USer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="PostutEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="customers" EntityType="Self.customer" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="suppliers" EntityType="Self.supplier" />
+    <EntitySet Name="USers" EntityType="Self.USer" />
+  </EntityContainer>
+</Schema>
